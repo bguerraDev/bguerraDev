@@ -1,9 +1,9 @@
 <!-- Banner -->
 <p align="center">
-  <img src="./A_personal_GitHub_README_profile_banner_for_a_tech.png" alt="bguerraDev banner" width="100%" />
+  <img src="./banner_github.png" alt="bguerraDev banner" width="100%" />
 </p>
 
-<h1 align="center">Hola 👋, soy Bryan Guerra</h1>
+<h1 align="center">Hola 👋 soy Bryan Guerra</h1>
 <p align="center">
   QA Engineer | Android Developer | Future Red Teamer 🛡️
 </p>
@@ -16,7 +16,7 @@
 - 🐍 Aprendiendo **Python** para mejorar mis skills en automatización
 - 👾 Estudiante de **Ciberseguridad**, enfocado en **Red Team / Pentesting**
 - 📱 Me apasiona crear apps Android nativas en **Java** (y sigo aprendiendo **Kotlin**)
-- 🧠 Amante de los retos técnicos, aprender y romper cosas de forma ética 😎
+- 🧠 Sigo en aprendizaje continuo
 
 ---
 
@@ -47,7 +47,7 @@
 ### 📱 Últimos proyectos
 
 - 🔊 **LoudlyTTS** – Lectura de notificaciones usando TTS en Android. App nativa Java.
-- 🔊 **Bluetooth Volume Lock** – Servicio que bloquea la atenuación brusca de volumen debido a API34
+- 🔊 **Bluetooth Volume Lock** – Servicio que bloquea la atenuación brusca de volumen debido a API 34.
 
 ---
 
