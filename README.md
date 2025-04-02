@@ -37,9 +37,13 @@
 
 ### 📊 GitHub Stats
 
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=bguerraDev&show_icons=true&theme=radical" width="49%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=bguerraDev&theme=radical" width="49%" />
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=bguerraDev&show_icons=true&theme=maroongold" width="49%" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=bguerraDev&theme=maroongold" width="49%" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bguerraDev&layout=compact&theme=maroongold" width="49%" />
 </p>
 
 ---
