@@ -38,7 +38,8 @@
 ### 📊 GitHub Stats
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=bguerraDev&show_icons=true&theme=panda)
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=bguerraDev&theme=panda)
+<!--- ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=bguerraDev&theme=panda) -->
+![GitHub Streak](https://streak-stats.demolab.com?user=bguerraDev&theme=panda)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=bguerraDev&layout=compact&theme=panda)
 
 ---
