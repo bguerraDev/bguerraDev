@@ -75,16 +75,14 @@
 ---
 
 ### 📂 Latest Project
-<!-- This will be updated automatically -->
 <!-- LATEST-PROJECT:START -->
 <!-- LATEST-PROJECT:END -->
 
 ---
 
 ### 📁 Latest Repositories
-<!-- This will be updated automatically -->
-<!--START_SECTION:activity-->
-<!--END_SECTION:activity-->
+<!-- LATEST-REPOS:START -->
+<!-- LATEST-REPOS:END -->
 
 ---
 
