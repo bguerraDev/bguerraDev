@@ -3,58 +3,95 @@
   <img src="./banner_github.png" alt="bguerraDev banner" width="100%" />
 </p>
 
-<h1 align="center">Hola 👋 soy Bryan Guerra</h1>
+<h1 align="center">Hi 👋 I'm Bryan Guerra</h1>
 <p align="center">
   QA Engineer | Android Developer | Future Red Teamer 🛡️
 </p>
 
 ---
 
-### 👨‍💻 Sobre mí
-
-- 🔎 QA Automation/Manual con **Java + Selenium + Cucumber/Gherkin**
-- 🐍 Aprendiendo **Python** para mejorar mis skills en automatización
-- 👾 Estudiante de **Ciberseguridad**, enfocado en **Red Team / Pentesting**
-- 📱 Me apasiona crear apps Android nativas en **Java** (y sigo aprendiendo **Kotlin**)
-- 🧠 Sigo en aprendizaje continuo
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=bguerraDev&label=PROFILE%20VIEWS&color=8A2BE2&style=flat" alt="Profile Views" />
+</p>
 
 ---
 
-### 🧰 Lenguajes y herramientas
+### 👨‍💻 About Me
 
-<p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="40" />
-</p>
+- 🔎 QA Automation/Manual with **Java + Selenium + Cucumber/Gherkin**
+- 🐍 Learning **Python** to enhance automation skills
+- 👾 Cybersecurity student focusing on **Red Team / Pentesting**
+- 📱 Passionate about creating native Android apps in **Java** (and learning **Kotlin**)
+- 🧠 Lifelong learner, constantly exploring new technologies
+
+---
+
+### 🧰 Tech Stack
+
+#### **Languages**
+![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+#### **Frontend**
+![React](https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack_Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)
+
+#### **Backend**
+![Django](https://img.shields.io/badge/Django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
+
+#### **Databases & Cloud**
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+![AWS S3](https://img.shields.io/badge/Amazon%20S3-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Neon](https://img.shields.io/badge/Neon-%2300E599.svg?style=for-the-badge&logo=neon&logoColor=white)
+
+#### **QA Automation**
+![Selenium](https://img.shields.io/badge/Selenium-%2343B02A.svg?style=for-the-badge&logo=selenium&logoColor=white)
+![Pytest](https://img.shields.io/badge/Pytest-%230A9EDC.svg?style=for-the-badge&logo=pytest&logoColor=white)
+
+#### **Cybersecurity**
+![Kali Linux](https://img.shields.io/badge/Kali%20Linux-%23557C94.svg?style=for-the-badge&logo=kalilinux&logoColor=white)
+![Burp Suite](https://img.shields.io/badge/Burp%20Suite-FF6633?style=for-the-badge&logo=burp-suite&logoColor=white)
+![Metasploitable](https://img.shields.io/badge/Metasploitable-%23000000.svg?style=for-the-badge)
+![Nessus](https://img.shields.io/badge/Nessus-%23007CFF.svg?style=for-the-badge)
+![ELK Stack](https://img.shields.io/badge/ELK%20Stack-%23000000.svg?style=for-the-badge&logo=elasticstack&logoColor=white)
 
 ---
 
 ### 📊 GitHub Stats
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=bguerraDev&show_icons=true&theme=panda)
-<!--- ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=bguerraDev&theme=panda) -->
 ![GitHub Streak](https://streak-stats.demolab.com?user=bguerraDev&theme=panda)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=bguerraDev&layout=compact&theme=panda)
 
 ---
 
-### 📱 Últimos proyectos
-
-- 🔊 **LoudlyTTS** – Lectura de notificaciones usando TTS en Android. App nativa Java.
-- 🔊 **Bluetooth Volume Lock** – Servicio que bloquea la atenuación brusca de volumen debido a API 34.
+### 📂 Latest Project
+<!-- This will be updated automatically -->
+<!-- LATEST-PROJECT:START -->
+<!-- LATEST-PROJECT:END -->
 
 ---
 
-### 🤝 Conectemos
+### 📁 Latest Repositories
+<!-- This will be updated automatically -->
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
+
+---
+
+### 🤝 Connect with me
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/bryan-fabrizzio-guerra-cobos-a3255332b)
-- 📫 bryan_9660@hotmail.com
+- 📫 bguerradev@outlook.com
 
 ---
 

@@ -1,0 +1,47 @@
+name: Update GitHub Profile README
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # Every 6 hours
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Get latest project
+        id: latest_project
+        run: |
+          LATEST_REPO=$(curl -s "https://api.github.com/users/bguerraDev/repos?sort=updated&per_page=1" | jq -r '.[0].full_name')
+          LATEST_DESC=$(curl -s "https://api.github.com/repos/$LATEST_REPO" | jq -r '.description')
+          echo "repo_name=$LATEST_REPO" >> $GITHUB_OUTPUT
+          echo "repo_desc=$LATEST_DESC" >> $GITHUB_OUTPUT
+
+      - name: Get latest repositories list
+        id: latest_repos
+        run: |
+          REPO_LIST=$(curl -s "https://api.github.com/users/bguerraDev/repos?sort=updated&per_page=5" | jq -r '.[] | "- [\(.name)](\(.html_url)) - \(.description // "No description")"')
+          echo "repo_list<<EOF" >> $GITHUB_OUTPUT
+          echo "$REPO_LIST" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Update README.md
+        run: |
+          sed -i "/<!-- LATEST-PROJECT:START -->/,/<!-- LATEST-PROJECT:END -->/c\<!-- LATEST-PROJECT:START -->\n🚀 **${{ steps.latest_project.outputs.repo_name }}** – ${{ steps.latest_project.outputs.repo_desc }}\n<!-- LATEST-PROJECT:END -->" README.md
+          sed -i "/<!--START_SECTION:activity-->/,/<!--END_SECTION:activity-->/c\<!--START_SECTION:activity-->\n${{ steps.latest_repos.outputs.repo_list }}\n<!--END_SECTION:activity-->" README.md
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "chore: update latest project and repos [skip ci]" || echo "No changes to commit"
+          git push
