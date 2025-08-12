@@ -91,7 +91,10 @@
     alt="Top Languages"
   />
   <!-- LATEST-PROJECT:START -->
-  <!-- LATEST-PROJECT:END -->
+<a href="https://github.com/bguerraDev/bguerraDev">
+  <img align="center" width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=bguerraDev&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="bguerraDev" />
+</a>
+<!-- LATEST-PROJECT:END -->
 </p>
 
 ---
@@ -100,7 +103,23 @@
 
 <p align="center">
   <!-- LATEST-REPOS-PINS:START -->
-  <!-- LATEST-REPOS-PINS:END -->
+<p align="center">
+  <a href="https://github.com/bguerraDev/bguerraDev">
+        <img width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=bguerraDev&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="bguerraDev" />
+        </a>
+  <a href="https://github.com/bguerraDev/smspyQA">
+        <img width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=smspyQA&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="smspyQA" />
+        </a>
+</p>
+<p align="center">
+  <a href="https://github.com/bguerraDev/DynamicCoverArtLockScreen">
+        <img width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=DynamicCoverArtLockScreen&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="DynamicCoverArtLockScreen" />
+        </a>
+  <a href="https://github.com/bguerraDev/BluetoothVolumeLock">
+        <img width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=BluetoothVolumeLock&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="BluetoothVolumeLock" />
+        </a>
+</p>
+<!-- LATEST-REPOS-PINS:END -->
 </p>
 
 ---
