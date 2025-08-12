@@ -1,10 +1,5 @@
 name: Update GitHub Profile README
 
-on:
-  schedule:
-    - cron: "0 */6 * * *"
-  workflow_dispatch:
-
 permissions:
   contents: write
 
@@ -21,7 +16,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Fetch data and update README (pure Node, no sed/jq)
+      - name: Build dynamic sections (pure Node)
         run: |
           node - <<'NODE'
           const fs = require('fs');
@@ -45,31 +40,48 @@ jobs:
           (async () => {
             const user = 'bguerraDev';
 
-            // Último repo (por actualización)
-            const latestRepos = await getJson(`https://api.github.com/users/${user}/repos?sort=updated&per_page=1`);
-            const latest = latestRepos[0];
-            const latestLine = `🚀 **${latest.full_name}** — ${latest.description ?? 'No description'}`;
+            // 1) Último repo actualizado
+            const latestArr = await getJson(`https://api.github.com/users/${user}/repos?sort=updated&per_page=1`);
+            const latest = latestArr[0];
+            const [ownerL, repoL] = latest.full_name.split('/');
 
-            // Lista de 5 repos actualizados
-            const repos = await getJson(`https://api.github.com/users/${user}/repos?sort=updated&per_page=5`);
-            const listLines = repos.map(r =>
-              `- [${r.name}](${r.html_url}) — ${r.description ?? 'No description'}`
-            ).join('\n');
+            const basePin = (owner, repo) =>
+              `https://github-readme-stats.vercel.app/api/pin/?username=${owner}` +
+              `&repo=${repo}&show_owner=true&theme=nightowl` +
+              `&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true`;
 
-            // Actualizar README
+            const latestHTML =
+              `<a href="https://github.com/${latest.full_name}">
+                 <img align="center" width="470" src="${basePin(ownerL, repoL)}" alt="${repoL}" />
+               </a>`;
+
+            // 2) Últimos 4 repos (2x2) como pins
+            const repos = await getJson(`https://api.github.com/users/${user}/repos?sort=updated&per_page=4`);
+
+            const pinTag = (full) => {
+              const [owner, repo] = full.split('/');
+              return `<a href="https://github.com/${full}">
+  <img width="470" src="${basePin(owner, repo)}" alt="${repo}" />
+</a>`;
+            };
+
+            const pins = repos.map(r => pinTag(r.full_name));
+            // 2 filas de 2 columnas
+            const latestPinsHTML =
+              `<p align="center">
+  ${pins[0] || ''}
+  ${pins[1] || ''}
+</p>
+<p align="center">
+  ${pins[2] || ''}
+  ${pins[3] || ''}
+</p>`;
+
+            // 3) Escribir en README entre marcadores
             const path = 'README.md';
             let md = fs.readFileSync(path, 'utf8');
-            md = replaceBetween(md, 'LATEST-PROJECT', latestLine);
-
-            if (md.includes('<!-- LATEST-REPOS:START -->')) {
-              md = replaceBetween(md, 'LATEST-REPOS', listLines);
-            } else if (md.includes('<!--START_SECTION:activity-->')) {
-              const start = '<!--START_SECTION:activity-->';
-              const end   = '<!--END_SECTION:activity-->';
-              const re = new RegExp(`${start}[\\s\\S]*?${end}`, 'm');
-              md = md.replace(re, `${start}\n${listLines}\n${end}`);
-            }
-
+            md = replaceBetween(md, 'LATEST-PROJECT', latestHTML);
+            md = replaceBetween(md, 'LATEST-REPOS-PINS', latestPinsHTML);
             fs.writeFileSync(path, md);
           })().catch(err => {
             console.error(err);
@@ -82,5 +94,5 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "chore: update latest project and repos [skip ci]" || echo "No changes"
+          git commit -m "chore: update latest project and repo pins [skip ci]" || echo "No changes"
           git push

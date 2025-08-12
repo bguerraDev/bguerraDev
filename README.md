@@ -8,8 +8,6 @@
   QA Engineer | Android Developer | Future Red Teamer 🛡️
 </p>
 
----
-
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=bguerraDev&label=PROFILE%20VIEWS&color=8A2BE2&style=flat" alt="Profile Views" />
 </p>
@@ -22,7 +20,7 @@
 - 🐍 Learning **Python** to enhance automation skills
 - 👾 Cybersecurity student focusing on **Red Team / Pentesting**
 - 📱 Passionate about creating native Android apps in **Java** (and learning **Kotlin**)
-- 🧠 Lifelong learner, constantly exploring new technologies
+- 🧠 Lifelong learner
 
 ---
 
@@ -45,11 +43,11 @@
 ![Django](https://img.shields.io/badge/Django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
+![Render](https://img.shields.io/badge/Render-000000.svg?style=for-the-badge&logo=render&logoColor=white)
 
 #### **Databases & Cloud**
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+![Firebase Firestore](https://img.shields.io/badge/Firebase%20Firestore-%23FFCA28.svg?style=for-the-badge&logo=firebase&logoColor=black)
 ![AWS S3](https://img.shields.io/badge/Amazon%20S3-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![Neon](https://img.shields.io/badge/Neon-%2300E599.svg?style=for-the-badge&logo=neon&logoColor=white)
 
@@ -66,36 +64,51 @@
 
 ---
 
-### 📊 GitHub Stats
+## 📊 GitHub Stats
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=bguerraDev&show_icons=true&theme=panda)
-![GitHub Streak](https://streak-stats.demolab.com?user=bguerraDev&theme=panda)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=bguerraDev&layout=compact&theme=panda)
+<!-- Row 1 -->
+<p align="center">
+  <!-- Stats -->
+  <img
+    width="470"
+    src="https://github-readme-stats.vercel.app/api?username=bguerraDev&show_icons=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true"
+    alt="GitHub Stats"
+  />
+  <!-- Streak -->
+  <img
+    width="470"
+    src="https://streak-stats.demolab.com?user=bguerraDev&hide_border=true&background=000000&ring=c56a90&fire=c56a90&currStreakLabel=c56a90"
+    alt="Streak Stats"
+  />
+</p>
+
+<!-- Row 2 -->
+<p align="center">
+  <!-- Most used languages -->
+  <img
+    width="470"
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=bguerraDev&layout=compact&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true"
+    alt="Top Languages"
+  />
+  <!-- LATEST-PROJECT:START -->
+  <!-- LATEST-PROJECT:END -->
+</p>
 
 ---
 
-### 📂 Latest Project
-<!-- LATEST-PROJECT:START -->
-🚀 **bguerraDev/bguerraDev** — No description
-<!-- LATEST-PROJECT:END -->
+## 📁 Latest Repositories
 
----
-
-### 📁 Latest Repositories
-<!-- LATEST-REPOS:START -->
-- [bguerraDev](https://github.com/bguerraDev/bguerraDev) — No description
-- [smspyQA](https://github.com/bguerraDev/smspyQA) — SMSPyQA is an automated QA testing project for the SMSPY full-stack application
-- [DynamicCoverArtLockScreen](https://github.com/bguerraDev/DynamicCoverArtLockScreen) — Dynamic lockscreen wallpaper based on Spotify cover art Native Android app that updates your lock screen in real time using music notifications and the Spotify API.
-- [BluetoothVolumeLock](https://github.com/bguerraDev/BluetoothVolumeLock) — Bluetooth Volume Lock is a service designed to keep media volume constant on Android. Android 15 (API 34) automatically lowers the volume for safety reasons. It's ideal for users who exercise with headphones and want to keep their volume constant.
-- [LoudlyTTS](https://github.com/bguerraDev/LoudlyTTS) — Native Android app to read your notifications aloud over Bluetooth. Lightweight, local, and practical.
-<!-- LATEST-REPOS:END -->
+<p align="center">
+  <!-- LATEST-REPOS-PINS:START -->
+  <!-- LATEST-REPOS-PINS:END -->
+</p>
 
 ---
 
 ### 🤝 Connect with me
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/bryan-fabrizzio-guerra-cobos-a3255332b)
-- 📫 bguerradev@outlook.com
+- 📫 bryan_9660@hotmail.com
 
 ---
 
