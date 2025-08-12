@@ -2,11 +2,11 @@ name: Update GitHub Profile README
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 */6 * * *"   # cada 6 horas
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write   # permite hacer commit
 
 jobs:
   update-readme:
