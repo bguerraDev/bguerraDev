@@ -76,12 +76,18 @@
 
 ### 📂 Latest Project
 <!-- LATEST-PROJECT:START -->
+🚀 **bguerraDev/bguerraDev** — No description
 <!-- LATEST-PROJECT:END -->
 
 ---
 
 ### 📁 Latest Repositories
 <!-- LATEST-REPOS:START -->
+- [bguerraDev](https://github.com/bguerraDev/bguerraDev) — No description
+- [smspyQA](https://github.com/bguerraDev/smspyQA) — SMSPyQA is an automated QA testing project for the SMSPY full-stack application
+- [DynamicCoverArtLockScreen](https://github.com/bguerraDev/DynamicCoverArtLockScreen) — Dynamic lockscreen wallpaper based on Spotify cover art Native Android app that updates your lock screen in real time using music notifications and the Spotify API.
+- [BluetoothVolumeLock](https://github.com/bguerraDev/BluetoothVolumeLock) — Bluetooth Volume Lock is a service designed to keep media volume constant on Android. Android 15 (API 34) automatically lowers the volume for safety reasons. It's ideal for users who exercise with headphones and want to keep their volume constant.
+- [LoudlyTTS](https://github.com/bguerraDev/LoudlyTTS) — Native Android app to read your notifications aloud over Bluetooth. Lightweight, local, and practical.
 <!-- LATEST-REPOS:END -->
 
 ---
