@@ -2,11 +2,11 @@ name: Update GitHub Profile README
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # cada 6 horas
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 permissions:
-  contents: write   # permite hacer commit
+  contents: write
 
 jobs:
   update-readme:
@@ -16,39 +16,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Build dynamic sections (github-script)
+        uses: actions/github-script@v7
         with:
-          node-version: '20'
+          script: |
+            const { readFileSync, writeFileSync } = require('fs');
 
-      - name: Build dynamic sections (pure Node)
-        shell: bash
-        run: |
-          node - <<'NODE'
-          const fs = require('fs');
+            function replaceBetween(src, tag, content) {
+              const start = `<!-- ${tag}:START -->`;
+              const end   = `<!-- ${tag}:END -->`;
+              const re = new RegExp(`${start}[\\s\\S]*?${end}`, 'm');
+              if (!re.test(src)) return src;
+              return src.replace(re, `${start}\n${content}\n${end}`);
+            }
 
-          async function getJson(url) {
-            const res = await fetch(url, {
-              headers: { 'Accept': 'application/vnd.github+json' }
-            });
-            if (!res.ok) throw new Error(`Fetch ${url} -> ${res.status}`);
-            return res.json();
-          }
-
-          function replaceBetween(src, tag, content) {
-            const start = `<!-- ${tag}:START -->`;
-            const end   = `<!-- ${tag}:END -->`;
-            const re = new RegExp(`${start}[\\s\\S]*?${end}`, 'm');
-            if (!re.test(src)) return src;
-            return src.replace(re, `${start}\n${content}\n${end}`);
-          }
-
-          (async () => {
             const user = 'bguerraDev';
 
             // 1) Último repo actualizado
-            const latestArr = await getJson(`https://api.github.com/users/${user}/repos?sort=updated&per_page=1`);
-            const latest = latestArr[0];
+            const latestRes = await github.request('GET /users/{username}/repos', {
+              username: user,
+              sort: 'updated',
+              per_page: 1
+            });
+            const latest = latestRes.data[0];
             const [ownerL, repoL] = latest.full_name.split('/');
 
             const basePin = (owner, repo) =>
@@ -61,8 +51,13 @@ jobs:
                 <img align="center" width="470" src="${basePin(ownerL, repoL)}" alt="${repoL}" />
               </a>`;
 
-            // 2) Últimos 4 repos (2x2) como pins
-            const repos = await getJson(`https://api.github.com/users/${user}/repos?sort=updated&per_page=4`);
+            // 2) Últimos 4 repos como pins (2x2)
+            const listRes = await github.request('GET /users/{username}/repos', {
+              username: user,
+              sort: 'updated',
+              per_page: 4
+            });
+            const repos = listRes.data;
 
             const pinTag = (full) => {
               const [owner, repo] = full.split('/');
@@ -85,15 +80,10 @@ jobs:
 
             // 3) Escribir en README entre marcadores
             const path = 'README.md';
-            let md = fs.readFileSync(path, 'utf8');
-            md = replaceBetween(md, 'LATEST-PROJECT', latestHTML);
-            md = replaceBetween(md, 'LATEST-REPOS-PINS', latestPinsHTML);
-            fs.writeFileSync(path, md);
-          })().catch(err => {
-            console.error(err);
-            process.exit(1);
-          });
-          NODE
+            let md = readFileSync(path, 'utf8');
+            md = replaceBetween(md, 'LATEST-PROJECT',     latestHTML);
+            md = replaceBetween(md, 'LATEST-REPOS-PINS',  latestPinsHTML);
+            writeFileSync(path, md);
 
       - name: Commit and push changes
         run: |
