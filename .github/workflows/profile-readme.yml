@@ -22,6 +22,7 @@ jobs:
           node-version: '20'
 
       - name: Build dynamic sections (pure Node)
+        shell: bash
         run: |
           node - <<'NODE'
           const fs = require('fs');
@@ -57,8 +58,8 @@ jobs:
 
             const latestHTML =
               `<a href="https://github.com/${latest.full_name}">
-                 <img align="center" width="470" src="${basePin(ownerL, repoL)}" alt="${repoL}" />
-               </a>`;
+                <img align="center" width="470" src="${basePin(ownerL, repoL)}" alt="${repoL}" />
+              </a>`;
 
             // 2) Últimos 4 repos (2x2) como pins
             const repos = await getJson(`https://api.github.com/users/${user}/repos?sort=updated&per_page=4`);
@@ -71,9 +72,9 @@ jobs:
             };
 
             const pins = repos.map(r => pinTag(r.full_name));
-            // 2 filas de 2 columnas
+
             const latestPinsHTML =
-              `<p align="center">
+`<p align="center">
   ${pins[0] || ''}
   ${pins[1] || ''}
 </p>
