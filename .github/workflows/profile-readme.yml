@@ -19,48 +19,50 @@ jobs:
           LATEST_JSON=$(curl -s "https://api.github.com/users/bguerraDev/repos?sort=updated&per_page=1")
           LATEST_REPO=$(echo "$LATEST_JSON" | jq -r '.[0].full_name')
           LATEST_DESC=$(curl -s "https://api.github.com/repos/$LATEST_REPO" | jq -r '.description // "No description"')
-          echo "LATEST_REPO=$LATEST_REPO" >> $GITHUB_ENV
-          echo "LATEST_DESC=$LATEST_DESC" >> $GITHUB_ENV
+          echo "repo_name=$LATEST_REPO" >> "$GITHUB_OUTPUT"
+          echo "repo_desc=$LATEST_DESC" >> "$GITHUB_OUTPUT"
 
       - name: Get latest repositories list (5)
         id: list
         run: |
           REPO_LIST=$(curl -s "https://api.github.com/users/bguerraDev/repos?sort=updated&per_page=5" \
-            | jq -r '.[] | "- [\(.name)](\(.html_url)) — \(.description // "No description")"')
+            | jq -r '.[] | "- [\(.name)](\(.html_url)) — \(.description // \"No description\")"')
           {
-            echo "REPO_LIST<<'EOF'"
+            echo "repo_list<<EOF"
             echo "$REPO_LIST"
             echo "EOF"
-          } >> $GITHUB_ENV
+          } >> "$GITHUB_OUTPUT"
 
       - name: Update README sections (no sed)
+        env:
+          LATEST_REPO: ${{ steps.latest.outputs.repo_name }}
+          LATEST_DESC: ${{ steps.latest.outputs.repo_desc }}
+          REPO_LIST:   ${{ steps.list.outputs.repo_list }}
         run: |
           node - <<'NODE'
           const fs = require('fs');
-
-          const readme = fs.readFileSync('README.md', 'utf8');
 
           function replaceBetween(src, tag, content) {
             const start = `<!-- ${tag}:START -->`;
             const end   = `<!-- ${tag}:END -->`;
             const re = new RegExp(`${start}[\\s\\S]*?${end}`, 'm');
+            if (!re.test(src)) return src; // si no existe, no rompe nada
             return src.replace(re, `${start}\n${content}\n${end}`);
           }
 
-          let latest = `🚀 **${process.env.LATEST_REPO}** — ${process.env.LATEST_DESC}`;
-          let repos  = process.env.REPO_LIST;
+          const readme = fs.readFileSync('README.md', 'utf8');
+
+          const latest = `🚀 **${process.env.LATEST_REPO}** — ${process.env.LATEST_DESC}`;
+          const repos  = process.env.REPO_LIST || '';
 
           let out = readme;
-
-          // Latest project
           out = replaceBetween(out, 'LATEST-PROJECT', latest);
 
-          // Latest repositories (prefer our tag; if no tag, try the old activity tag)
           if (out.includes('<!-- LATEST-REPOS:START -->')) {
             out = replaceBetween(out, 'LATEST-REPOS', repos);
           } else if (out.includes('<!--START_SECTION:activity-->')) {
             const start = '<!--START_SECTION:activity-->';
-            const end = '<!--END_SECTION:activity-->';
+            const end   = '<!--END_SECTION:activity-->';
             const re = new RegExp(`${start}[\\s\\S]*?${end}`, 'm');
             out = out.replace(re, `${start}\n${repos}\n${end}`);
           }
