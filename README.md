@@ -77,7 +77,7 @@
   <!-- Streak -->
   <img
     width="470"
-    src="https://streak-stats.demolab.com?user=bguerraDev&hide_border=true&background=000000&ring=c56a90&fire=c56a90&currStreakLabel=c56a90"
+    src="https://streak-stats.demolab.com?user=bguerraDev&hide_border=true&ring=c56a90&fire=c56a90&currStreakLabel=c56a90"
     alt="Streak Stats"
   />
 </p>
@@ -108,7 +108,7 @@
 ### 🤝 Connect with me
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/bryan-fabrizzio-guerra-cobos-a3255332b)
-- 📫 bryan_9660@hotmail.com
+- 📫 bguerradev@outlook.com
 
 ---
 

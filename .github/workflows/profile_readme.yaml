@@ -2,11 +2,11 @@ name: Update GitHub Profile README
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 */6 * * *" # cada 6 horas
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write # necesario para poder commitear cambios
 
 jobs:
   update-readme:
@@ -23,66 +23,63 @@ jobs:
             const { readFileSync, writeFileSync } = require('fs');
 
             function replaceBetween(src, tag, content) {
-              const start = `<!-- ${tag}:START -->`;
-              const end   = `<!-- ${tag}:END -->`;
-              const re = new RegExp(`${start}[\\s\\S]*?${end}`, 'm');
-              if (!re.test(src)) return src;
-              return src.replace(re, `${start}\n${content}\n${end}`);
+            const start = `<!-- ${tag}:START -->`;
+            const end   = `<!-- ${tag}:END -->`;
+            const re = new RegExp(`${start}[\\s\\S]*?${end}`, 'm');
+            if (!re.test(src)) return src;
+            return src.replace(re, `${start}\n${content}\n${end}`);
             }
 
             const user = 'bguerraDev';
 
-            // 1) Último repo actualizado
+            // 1) Último repo actualizado -> pin con mismo estilo (nightowl + gradient + colores)
             const latestRes = await github.request('GET /users/{username}/repos', {
-              username: user,
-              sort: 'updated',
-              per_page: 1
+            username: user, sort: 'updated', per_page: 1
             });
-            const latest = latestRes.data[0];
-            const [ownerL, repoL] = latest.full_name.split('/');
+            const latest = latestRes.data[0] || null;
 
             const basePin = (owner, repo) =>
-              `https://github-readme-stats.vercel.app/api/pin/?username=${owner}` +
-              `&repo=${repo}&show_owner=true&theme=nightowl` +
-              `&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true`;
+            `https://github-readme-stats.vercel.app/api/pin/?username=${owner}` +
+            `&repo=${repo}&show_owner=true&theme=nightowl` +
+            `&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true`;
 
-            const latestHTML =
-              `<a href="https://github.com/${latest.full_name}">
-                <img align="center" width="470" src="${basePin(ownerL, repoL)}" alt="${repoL}" />
-              </a>`;
+            let latestHTML = '';
+            if (latest) {
+            const [ownerL, repoL] = latest.full_name.split('/');
+            latestHTML =
+            `<a href="https://github.com/${latest.full_name}">
+              <img align="center" width="470" src="${basePin(ownerL, repoL)}" alt="${repoL}" />
+            </a>`;
+            }
 
-            // 2) Últimos 4 repos como pins (2x2)
+            // 2) Últimos 4 repos -> pins 2×2 con mismo estilo
             const listRes = await github.request('GET /users/{username}/repos', {
-              username: user,
-              sort: 'updated',
-              per_page: 4
+            username: user, sort: 'updated', per_page: 4
             });
-            const repos = listRes.data;
+            const repos = listRes.data || [];
 
             const pinTag = (full) => {
-              const [owner, repo] = full.split('/');
-              return `<a href="https://github.com/${full}">
-  <img width="470" src="${basePin(owner, repo)}" alt="${repo}" />
-</a>`;
+            const [owner, repo] = full.split('/');
+            return `<a href="https://github.com/${full}">
+                    <img width="470" src="${basePin(owner, repo)}" alt="${repo}" />
+                    </a>`;
             };
 
             const pins = repos.map(r => pinTag(r.full_name));
 
             const latestPinsHTML =
-`<p align="center">
-  ${pins[0] || ''}
-  ${pins[1] || ''}
-</p>
-<p align="center">
-  ${pins[2] || ''}
-  ${pins[3] || ''}
-</p>`;
+            `<p align="center">
+              ${pins[0] || ''}${pins[0] ? '\n  ' : ''}${pins[1] || ''}
+            </p>
+            <p align="center">
+              ${pins[2] || ''}${pins[2] ? '\n  ' : ''}${pins[3] || ''}
+            </p>`;
 
             // 3) Escribir en README entre marcadores
             const path = 'README.md';
             let md = readFileSync(path, 'utf8');
-            md = replaceBetween(md, 'LATEST-PROJECT',     latestHTML);
-            md = replaceBetween(md, 'LATEST-REPOS-PINS',  latestPinsHTML);
+            md = replaceBetween(md, 'LATEST-PROJECT', latestHTML);
+            md = replaceBetween(md, 'LATEST-REPOS-PINS', latestPinsHTML);
             writeFileSync(path, md);
 
       - name: Commit and push changes
