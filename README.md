@@ -91,8 +91,8 @@
     alt="Top Languages"
   />
   <!-- LATEST-PROJECT:START -->
-<a href="https://github.com/bguerraDev/bguerraDev">
-  <img align="center" width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=bguerraDev&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="bguerraDev" />
+<a href="https://github.com/bguerraDev/SMSPy-backend">
+  <img align="center" width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=SMSPy-backend&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="SMSPy-backend" />
 </a>
 <!-- LATEST-PROJECT:END -->
 </p>
@@ -104,19 +104,19 @@
 <p align="center">
   <!-- LATEST-REPOS-PINS:START -->
 <p align="center">
+  <a href="https://github.com/bguerraDev/SMSPy-backend">
+        <img width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=SMSPy-backend&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="SMSPy-backend" />
+        </a>
   <a href="https://github.com/bguerraDev/bguerraDev">
         <img width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=bguerraDev&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="bguerraDev" />
         </a>
+</p>
+<p align="center">
   <a href="https://github.com/bguerraDev/LoudlyTTS">
         <img width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=LoudlyTTS&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="LoudlyTTS" />
         </a>
-</p>
-<p align="center">
   <a href="https://github.com/bguerraDev/DynamicIslandMusic">
         <img width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=DynamicIslandMusic&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="DynamicIslandMusic" />
-        </a>
-  <a href="https://github.com/bguerraDev/smspyQA">
-        <img width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=smspyQA&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="smspyQA" />
         </a>
 </p>
 <!-- LATEST-REPOS-PINS:END -->
