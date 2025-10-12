@@ -91,8 +91,8 @@
     alt="Top Languages"
   />
   <!-- LATEST-PROJECT:START -->
-<a href="https://github.com/bguerraDev/ListMessagesPortfolio">
-  <img align="center" width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=ListMessagesPortfolio&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="ListMessagesPortfolio" />
+<a href="https://github.com/bguerraDev/bguerraDev">
+  <img align="center" width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=bguerraDev&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="bguerraDev" />
 </a>
 <!-- LATEST-PROJECT:END -->
 </p>
@@ -104,11 +104,11 @@
 <p align="center">
   <!-- LATEST-REPOS-PINS:START -->
 <p align="center">
-  <a href="https://github.com/bguerraDev/ListMessagesPortfolio">
-        <img width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=ListMessagesPortfolio&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="ListMessagesPortfolio" />
-        </a>
   <a href="https://github.com/bguerraDev/bguerraDev">
         <img width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=bguerraDev&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="bguerraDev" />
+        </a>
+  <a href="https://github.com/bguerraDev/ListMessagesPortfolio">
+        <img width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=bguerraDev&repo=ListMessagesPortfolio&show_owner=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&hide_border=true" alt="ListMessagesPortfolio" />
         </a>
 </p>
 <p align="center">
